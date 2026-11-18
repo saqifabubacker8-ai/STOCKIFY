@@ -4,7 +4,7 @@ const { logOpening } = require('./stock');
 
 async function seedBase() {
   if (!(await User.countDocuments())) {
-    const email = (process.env.ADMIN_EMAIL || 'admin@stockify.local').toLowerCase();
+    const email = (process.env.ADMIN_EMAIL || 'admin@skaccessories.local').toLowerCase();
     const pw = process.env.ADMIN_PASSWORD || 'Admin@12345';
     await User.create({ name: 'Administrator', email, password: await bcrypt.hash(pw, 12), role: 'admin' });
     console.log(`Created first administrator: ${email}  (change the password after signing in)`);

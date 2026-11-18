@@ -38,7 +38,7 @@ export default async function (root) {
   ['from', 'to'].forEach(id => $('#' + id).addEventListener('change', load));
   $('#xl').onclick = async e => {
     const b = e.currentTarget; b.disabled = true;
-    try { await download(`/reports/${key}?format=xlsx&${qs()}`, `stockify-${key}-${today()}.xlsx`); toast('Excel file downloaded'); } catch (err) { toast(err.message, 'error'); }
+    try { await download(`/reports/${key}?format=xlsx&${qs()}`, `sk-accessories-${key}-${today()}.xlsx`); toast('Excel file downloaded'); } catch (err) { toast(err.message, 'error'); }
     b.disabled = false;
   };
   await load();

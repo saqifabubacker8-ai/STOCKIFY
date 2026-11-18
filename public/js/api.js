@@ -1,4 +1,4 @@
-const KEY = 'stockify_session';
+const KEY = 'sk_accessories_session';
 export const session = {
   get token() { try { return JSON.parse(localStorage.getItem(KEY)).token; } catch { return null; } },
   get user() { try { return JSON.parse(localStorage.getItem(KEY)).user; } catch { return null; } },

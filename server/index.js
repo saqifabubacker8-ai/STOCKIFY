@@ -21,7 +21,7 @@ app.use(helmet({ contentSecurityPolicy: { useDefaults: true, directives: {
 app.use(compression({ filter: (req, res) => (req.path.startsWith('/api/events') ? false : compression.filter(req, res)) }));
 app.use(express.json({ limit: '2mb' }));
 
-app.get('/api/health', (req, res) => res.json({ ok: true, service: 'stockify' }));
+app.get('/api/health', (req, res) => res.json({ ok: true, service: 'SK Accessories' }));
 
 app.use('/api/auth', require('./routes/auth'));
 app.use('/api', auth);
@@ -43,5 +43,5 @@ app.use(errorHandler);
 
 const PORT = process.env.PORT || 3000;
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/stockify')
-  .then(async () => { await seedBase(); app.listen(PORT, () => console.log(`STOCKIFY running at http://localhost:${PORT}`)); })
+  .then(async () => { await seedBase(); app.listen(PORT, () => console.log(`SK Accessories running at http://localhost:${PORT}`)); })
   .catch(e => { console.error('Could not connect to MongoDB:', e.message); process.exit(1); });

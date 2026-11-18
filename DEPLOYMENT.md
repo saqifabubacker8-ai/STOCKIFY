@@ -1,4 +1,4 @@
-# Deploy Stockify online
+# Deploy SK Accessories online
 
 ## 1. MongoDB Atlas
 1. Create a free cluster in MongoDB Atlas.

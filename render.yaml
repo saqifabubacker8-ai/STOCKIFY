@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: stockify
+    name: sk-accessories
     runtime: node
     plan: free
     buildCommand: npm install
@@ -12,7 +12,7 @@ services:
       - key: JWT_SECRET
         generateValue: true
       - key: ADMIN_EMAIL
-        value: admin@stockify.local
+        value: admin@skaccessories.local
       - key: ADMIN_PASSWORD
         generateValue: true
       - key: MONGODB_URI

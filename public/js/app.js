@@ -12,12 +12,12 @@ const app = $('#app');
 
 function showLogin() {
   state.es && state.es.close(); state.current = null;
-  document.title = 'Sign in - STOCKIFY';
+  document.title = 'Sign in - SK Accessories';
   app.innerHTML = `<div class="login">
-    <section class="login-art"><div class="logo"><span class="logo-mark">${icon('layers')}</span>STOCKIFY</div>
+    <section class="login-art"><div class="logo"><span class="logo-mark">${icon('layers')}</span>SK ACCESSORIES</div>
       <div><h1>Know exactly what is on your shelves.</h1><p>Hardware stock, purchases and invoices for Sleek and Ebco fittings in one place.</p></div>
       <ul><li>${icon('check')} Variant-level stock with low-stock alerts</li><li>${icon('check')} Purchases and invoices update inventory instantly</li><li>${icon('check')} Reports ready for Excel</li></ul></section>
-    <section class="login-form"><form id="login" novalidate><div><h2>Sign in</h2><p class="muted">Use your STOCKIFY account.</p></div>
+    <section class="login-form"><form id="login" novalidate><div><h2>Sign in</h2><p class="muted">Use your SK Accessories account.</p></div>
       <div class="err" id="err" role="alert"></div>
       <div class="field"><label for="em">Email</label><input class="input" id="em" type="email" autocomplete="username" required></div>
       <div class="field"><label for="pw">Password</label><input class="input" id="pw" type="password" autocomplete="current-password" required></div>
@@ -35,7 +35,7 @@ function showLogin() {
 function showShell() {
   const u = session.user;
   app.innerHTML = `<div class="shell">
-    <aside class="sidebar" id="sidebar"><div class="logo"><span class="logo-mark">${icon('layers')}</span><div>STOCKIFY<small>Hardware inventory</small></div></div>
+    <aside class="sidebar" id="sidebar"><div class="logo"><span class="logo-mark">${icon('layers')}</span><div>SK ACCESSORIES<small>Hardware inventory</small></div></div>
       <nav class="nav" aria-label="Main">${NAV.map(([k, l, i]) => `<a href="#/${k}" data-k="${k}">${icon(i)}<span>${l}</span></a>`).join('')}</nav>
       <div class="side-foot"><div class="avatar">${esc(initials(u.name))}</div><div><b>${esc(u.name)}</b><span>${esc(u.role)}</span></div>
         <button class="icon-btn" id="logout" aria-label="Sign out" title="Sign out">${icon('logout')}</button></div></aside>
@@ -59,7 +59,7 @@ async function route() {
   const key = NAV.some(n => n[0] === path) ? path : 'dashboard';
   if (path !== key) { location.hash = '#/' + key; return; }
   $$('.nav a').forEach(a => a.classList.toggle('on', a.dataset.k === key));
-  document.title = NAV.find(n => n[0] === key)[1] + ' - STOCKIFY';
+  document.title = NAV.find(n => n[0] === key)[1] + ' - SK Accessories';
   const view = $('#view'), id = ++state.routeId;
   state.current = null;
   view.classList.remove('page-in'); void view.offsetWidth; view.classList.add('page-in');

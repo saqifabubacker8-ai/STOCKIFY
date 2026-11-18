@@ -1,4 +1,4 @@
-# STOCKIFY - Smart Hardware Inventory Management System
+# SK Accessories - Smart Hardware Inventory Management System
 
 Inventory, purchasing and invoicing for a modular kitchen / wardrobe / furniture hardware business (Sleek, Ebco and any brand you add).
 Plain HTML, CSS and vanilla JavaScript on the front end; Node.js, Express and MongoDB (Mongoose) on the back end. No frontend framework.

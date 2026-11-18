@@ -62,7 +62,7 @@ router.get('/:type', wrap(async (req, res) => {
   if (req.query.format !== 'xlsx') return res.json(rep);
 
   const wb = new ExcelJS.Workbook();
-  wb.creator = 'STOCKIFY';
+  wb.creator = 'SK Accessories';
   const ws = wb.addWorksheet(rep.title.slice(0, 31));
   ws.columns = rep.columns.map(c => ({ key: c.key, width: c.width }));
   ws.addRow([`${rep.title} - generated ${new Date().toLocaleString('en-IN')}`]).font = { bold: true, size: 14 };
@@ -84,7 +84,7 @@ router.get('/:type', wrap(async (req, res) => {
   ws.autoFilter = { from: { row: 3, column: 1 }, to: { row: 3, column: rep.columns.length } };
   const buf = await wb.xlsx.writeBuffer();
   res.setHeader('Content-Type', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
-  res.setHeader('Content-Disposition', `attachment; filename="stockify-${req.params.type}-${new Date().toISOString().slice(0, 10)}.xlsx"`);
+  res.setHeader('Content-Disposition', `attachment; filename="sk-accessories-${req.params.type}-${new Date().toISOString().slice(0, 10)}.xlsx"`);
   res.send(Buffer.from(buf));
 }));
 
